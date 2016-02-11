@@ -1,0 +1,16 @@
+h1{
+    text-align:center;    
+}
+
+table{
+    text-align:left;
+    margin:auto;
+}
+
+table tr th{
+    background-color: #a4b2cb;
+}
+
+table tr{
+    text-align: center;
+}
