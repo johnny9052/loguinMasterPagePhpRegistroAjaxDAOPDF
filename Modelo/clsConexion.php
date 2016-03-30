@@ -10,7 +10,6 @@ class clsConexion {
     private $cadenaconexion;
     private $connect;
     private $Consulta_ID;
-    
 
     public function conectar() {
         $this->usuario = "postgres";
@@ -63,7 +62,8 @@ class clsConexion {
         } else {
             echo '[{"res" : "0"}]';
         }
-    }        
+    }
+
 }
 
 ?>

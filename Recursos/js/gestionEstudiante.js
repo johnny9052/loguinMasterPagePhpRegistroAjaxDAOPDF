@@ -12,7 +12,7 @@ function guardarEstudiante() {
     var arrayParameters = new Array();
 
 
-    if (codigo != "" && nombre != "" && apellido!="" && cedula!="" && edad!="" && semestre!="") {
+    if (codigo != "" && nombre != "" && apellido != "" && cedula != "" && edad != "" && semestre != "") {
 
         if (id !== "") {
             arrayParameters.push(newArg('type', 'update'));
@@ -43,8 +43,7 @@ function guardarEstudiante_processResponse(res) {
         limpiar();
         alert("Guardado con exito");
         listarEstudiante();
-    }
-    else {
+    } else {
         alert("No se ha guardado");
     }
 }
@@ -88,8 +87,7 @@ function buscarEstudiante_processResponse(res) {
                 document.getElementById('txtSemestre').value = info[f].semestre;
             }
         }
-    }
-    else {
+    } else {
         alert("No se encuentra");
         limpiar();
     }
@@ -122,8 +120,7 @@ function eliminarEstudiante_processResponse(res) {
         limpiar();
         alert("Eliminado con exito");
         listarEstudiante();
-    }
-    else {
+    } else {
         alert("No se ha eliminado");
     }
 }
@@ -136,10 +133,17 @@ function listarEstudiante() {
 }
 
 function listarEstudiante_processResponse(res) {
-        
+
     var info = eval("(" + res + ")");
 
-    var lista = "<tr><td><b>Codigo</b></td><td><b>Nombre</b></td><td><b>Apellido</b></td><td><b>Cedula</b></td><td><b>Edad</b></td><td><b>Semestre</b></td></tr>";
+    var lista = "<tr>\n\
+                    <td><b>Codigo</b></td>\n\
+                    <td><b>Nombre</b></td>\n\
+                    <td><b>Apellido</b>\n\
+                    </td><td><b>Cedula</b>\n\
+                    </td><td><b>Edad</b>\n\
+                    </td><td><b>Semestre</b></td>\n\
+                </tr>";
 
     if (info[0].res != 0) {
         if (info.length > 0) {
@@ -157,7 +161,7 @@ function listarEstudiante_processResponse(res) {
 
         document.getElementById("listadoEstudiantes").innerHTML = lista;
     }
-    else {
+   else {
         document.getElementById("listadoEstudiantes").innerHTML = "<b>No se encuentra informacion</b>"
         limpiar();
     }

@@ -28,6 +28,7 @@
 
                 <td rowspan="10">
                     <table id="listadoEstudiantes" border="1">                        
+                        
                     </table>
                 </td>
             </tr>

@@ -18,6 +18,7 @@ and open the template in the editor.
                         <a href="index.php?page=estudiantes">Estudiantes</a><br>
                         <a href="index.php?page=categorias">Categorias</a><br>
                         <a href="index.php?page=estudiantesGRID">Estudiantes GRID</a><br>
+                        <a href="index.php?page=cargarForaneas">Cargar Foraneas</a><br>
                     </td>
 
                     <td width="80%">                        
