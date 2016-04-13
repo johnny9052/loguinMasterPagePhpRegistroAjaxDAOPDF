@@ -35,6 +35,30 @@ class clsConexion {
         }
     }
 
+    function ejecutarValidandoUniqueANDPrimaryKey($sql) {
+        if ($sql == "") {
+            return 0;
+        } else {
+            /* Si puede enviar la consulta sin importar que encuentre llaves duplicadas */
+            if (pg_send_query($this->connect, $sql)) {
+                /* Ejecuta la consulta */
+                $this->consulta_ID = pg_get_result($this->connect);
+                /* Se tiene algun resultado sin importar que contenga errores de duplidados */
+                if ($this->consulta_ID) {
+                    /* Detecte un posible error */
+                    $state = pg_result_error_field($this->consulta_ID, PGSQL_DIAG_SQLSTATE);
+                    /* Si no se genero ningun error */
+                    if ($state == 0) {
+                        return $this->consulta_ID;
+                    } else {
+                        /* Si encontro algun error */
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+
     function validarLoguin($resultado) {
         $vec = pg_fetch_row($resultado);
         if ($vec[0] != "") {

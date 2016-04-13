@@ -16,8 +16,7 @@ function cargarDepartamento() {
         success: function (data) {
 
             var info = JSON.parse(data);
-
-            //var select = $("#selDepartamento");
+            
             var select = document.getElementById("selDepartamento");
 
             //Limpiar select
@@ -28,7 +27,7 @@ function cargarDepartamento() {
             //Se llena el select
             if (data.length > 0) {
                 var opt = null;
-                for (var i = 0; i < data.length - 1; i++) {
+                for (var i = 0; i < info.length; i++) {
                     opt = new Option(info[i].nombre, info[i].id);
                     select.options[select.length] = opt;
                 }
@@ -70,7 +69,7 @@ function cargarMunicipio() {
             //Se llena el select
             if (data.length > 0) {
                 var opt = null;
-                for (var i = 0; i < data.length - 1; i++) {
+                for (var i = 0; i < info.length; i++) {
                     opt = new Option(info[i].nombre, info[i].id);
                     select.options[select.length] = opt;
                 }
