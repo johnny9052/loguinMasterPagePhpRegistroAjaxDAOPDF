@@ -12,9 +12,9 @@ class loguinDAO {
     }
 
     public function loguear(clsLoguin $obj) {
-        $sql = "SELECT usuario,password from usuario where"
-                . " usuario='" . $obj->getUsuario() . "' and "
-                . "password='" . $obj->getPassword() . "'";
+        $sql = "SELECT nickname,password from usuario where"
+                . " nickname='" . $obj->getUsuario() . "' and "
+                . "password='" . md5($obj->getPassword()) . "'";
         $resultado = $this->objCon->Ejecutar($sql);
         return $this->objCon->validarLoguin($resultado);
     }
