@@ -1,6 +1,6 @@
 <?php
 
-class loguinDAO {
+class loguinDAO{
 
     private $con;
     private $objCon;
